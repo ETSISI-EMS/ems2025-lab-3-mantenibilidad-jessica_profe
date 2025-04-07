@@ -36,7 +36,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ETSISI-EMS_ems2025-lab-3-mantenibilidad-jessica_profe_827d9c3b-e010-40f1-9f5c-6e2357e8407e -Dsonar.projectName='ems2025-lab-3-mantenibilidad-jessica_profe'
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${{ secrets.PROJECT_ID }} -Dsonar.projectName='${{ secrets.PROJECT_NAME }}'
       - name: Query status
         id: qgStatus
         uses: fjogeleit/http-request-action@v1.15.2
